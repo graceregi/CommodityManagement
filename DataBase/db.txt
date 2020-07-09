@@ -1,1 +1,8 @@
-
+'CREATE TABLE `commoditydetails` (
+  `cname` varchar(50) NOT NULL,
+  `description` longtext NOT NULL,
+  `cost` float NOT NULL,
+  `qty` int(11) NOT NULL,
+  `purchaseDate` date DEFAULT NULL,
+  PRIMARY KEY (`cname`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1'
