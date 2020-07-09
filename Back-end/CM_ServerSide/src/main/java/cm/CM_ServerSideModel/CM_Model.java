@@ -21,8 +21,8 @@ public class CM_Model {
 		
 	}
 	
-	public CM_Model(String cname,String description, Float cost,Integer qty,Date purchaseDate) {
-		this.cname=cname;
+	public CM_Model(String description, Float cost,Integer qty,Date purchaseDate) {
+		
 		this.description=description;
 		this.cost=cost;
 		this.qty=qty;
@@ -66,7 +66,7 @@ public class CM_Model {
 		this.qty = qty;
 	}
 
-	@Column(name = "purchaseDate", nullable = false)
+	@Column(name = "purchaseDate")
 	public Date getPurchaseDate() {
 		return purchaseDate;
 	}
