@@ -6,6 +6,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,7 +27,7 @@ public class CM_Controller {
 	
 	@GetMapping("/commodities")
 	public List<CM_Model> getAllCommodity(){
-		System.out.println("jhg");
+		System.out.println("checked");
 		return cmService.getAll();
 	}
 	
@@ -39,5 +40,9 @@ public class CM_Controller {
 	public String addCommodity(@Valid @RequestBody CM_Model c) {
 		return cmService.addCommodity(c);
 	}
-	
+	@DeleteMapping("/commodities/{cname}")
+	public String deleteCommodity(@PathVariable String cname) {
+		cmService.deleteCM(cname);
+		return "Deleted";
+	}
 }
